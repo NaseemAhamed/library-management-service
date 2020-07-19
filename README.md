@@ -219,7 +219,7 @@ The following read performance test is done on my system with a short ramp-up pe
 Throughput obtained was 87.7/sec. 
 
 The report and aggregate graph can be found at the following link
-[performance test report]
+[performance test report](https://github.com/NaseemAhamed/library-management-service/blob/master/PerformanceTestReport.png)
 
 ------------------------------------------------------------------------
 
