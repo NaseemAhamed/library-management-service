@@ -38,6 +38,12 @@ The user can view, borrow and return books.
     - Unit tests in this application use Jupiter JUnit APIs and Mockito features.
     - Component tests use WebTestClient to test the service routers.
     - StepVerifier is used for testing methods wherever a publisher is returned.
+    
+- **Slf4j**
+    - Audit Trail
+    
+- **Java >= 8**
+    - Language and platform
 
 ## Business logic and assumptions
 
@@ -64,21 +70,26 @@ The user can view, borrow and return books.
 (PostMan Collection is available in the root directory)
 
 
-1. User can view books in library
+**1. User can view books in library**
+
 Request:
+
 ```
 GET /v1/books
 ```
 Body:
+
 ``
 Not Applicable
 ``
 Header:
+
 ``
 Not Required
 ``
 Response:
-```
+
+```json
 [
     {
         "id": "5f137aef625ec410888de04e",
@@ -88,40 +99,51 @@ Response:
 ]
 ```
 ------------------------------------------------------------------------
-2. User can borrow a book from the library
+**2. User can borrow a book from the library**
+
 Request:
+
 ```
 POST /v1/books/user1?action=borrow
 ```
+
 Body:
-``
+
+```json
 {
     "id": "5f137aef625ec410888de04e",
     "bookName": "Legend of Zelda"
 }
-``
+```
 Header:
-``
+
+```
 Accept: application/stream+json
 Content-Type: application/stream+json
-``
+```
 Response:
+
 Book with Id 5f137aef625ec410888de04e is borrowed.
+
 ------------------------------------------------------------------------
 
-3. User can borrow a copy of a book from the library
+**3. User can borrow a copy of a book from the library**
+
 Same as API Number 2. The validation to borrow only one copy of a book is done.
 
 ------------------------------------------------------------------------
 
-4. User can return books to the library
+**4. User can return books to the library**
 
 Request:
+
 ```
 POST /v1/books/user1?action=return
 ```
+
 Body:
-``
+
+```json
 {
   "books": [
     {
@@ -130,40 +152,44 @@ Body:
     }
   ]
 }
-``
+```
+
 Header:
-``
+
+```
 Accept: application/stream+json
 Content-Type: application/stream+json
-``
+```
+
 Response:
 Book(s) with the following ID are returned: 5f137aef625ec410888de04e
 
-###Execution:
+### Execution:
 
-To boot the application: <br />
+- To boot the application: 
     i. mvn clean install
     ii. mvn spring-boot:run
     
-####Note:
+### Note:
 
-The database is hosted in cloud and its configuration is available in src/main/resources/application.properties
-So, the application can be started with ease.
-In order to populate library with some books for functional testing, execute ViewBooksTest.java
+The database is hosted in cloud and its configuration is available in src/main/resources/application.properties. So, the application can be started with ease. 
+
+In order to populate library with some books for functional testing, execute ViewBooksTest.java. 
+
 Each component test resets the required database states before its execution as how it should be. 
 
     
-To execute the application locally (IntelliJ IDEA),  <br />
+- To execute the application locally (IntelliJ IDEA), 
     - Run Application.java in default profile.
 
-Test specs:  <br />
+- Test specs:  
     - DTO Validator tests - com/library/management/common/BeanValidationTest.java.
     - User Story Component tests - com/library/management/component/test/*
-        Order:
-            User Story 1 -  ViewBooksTest.java
-            User Story 2 -  BorrowBooksTest.java
-            User Story 3 -  BorrowCopyBooksTest.java
-            User Story 4 -  ReturnBooksTest.java
+       - Order:
+            - User Story 1 :  ViewBooksTest.java
+            - User Story 2 :  BorrowBooksTest.java
+            - User Story 3 :  BorrowCopyBooksTest.java
+            - User Story 4 :  ReturnBooksTest.java
     <hr>
 
 
