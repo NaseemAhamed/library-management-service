@@ -1,0 +1,121 @@
+{
+  "info": {
+    "_postman_id": "9f77cc42-1e51-4657-83b0-8260a6e61dd1",
+    "name": "library-management-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET books",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Borrow book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/stream+json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/stream+json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"_id\": \"5f137aef625ec410888de04e\",\n    \"bookName\": \"Legend of Zelda\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/books/user1?action=borrow",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "books",
+            "user1"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "borrow"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Return book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "type": "text",
+            "value": "application/stream+json"
+          },
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/stream+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"books\": [\n      {\n        \"_id\": \"5f137aef625ec410888de04e\",\n        \"bookName\": \"Legend of Zelda\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/books/user1?action=return",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "books",
+            "user1"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "return"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

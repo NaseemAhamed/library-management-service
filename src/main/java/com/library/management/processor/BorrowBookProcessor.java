@@ -71,7 +71,7 @@ public class BorrowBookProcessor {
 
     private Mono<LibraryBookDto> retrieveBookFromLibrary(final BorrowedBookDto borrowedBookDto) {
         return dbService
-            .findBookInLibrary(borrowedBookDto.get_id(), borrowedBookDto.getBookName())
+            .findBookInLibrary(borrowedBookDto.getId(), borrowedBookDto.getBookName())
             .switchIfEmpty(Mono.defer(() ->
                 Mono.error(new LibraryResponseStatusException(HttpStatus.NOT_FOUND,
                     ErrorStore.RESOURCE_NOT_FOUND.getMessage(),
@@ -83,7 +83,7 @@ public class BorrowBookProcessor {
         return dbService
             .saveBorrowedBook(BorrowedBookDto
                 .builder()
-                ._id(libraryBookDto.get_id())
+                .id(libraryBookDto.getId())
                 .bookName(libraryBookDto.getBookName())
                 .userId(userId)
                 .authorName(libraryBookDto.getAuthorName())
@@ -97,16 +97,16 @@ public class BorrowBookProcessor {
 
     private Mono<@NotNull String> checkoutBorrowedBookOrRollback(final BorrowedBookDto borrowedBook) {
         return dbService
-            .removeBookFromLibrary(borrowedBook.get_id())
-            .map(value -> borrowedBook.get_id())
-            .switchIfEmpty(Mono.just(borrowedBook.get_id()))
+            .removeBookFromLibrary(borrowedBook.getId())
+            .map(value -> borrowedBook.getId())
+            .switchIfEmpty(Mono.just(borrowedBook.getId()))
             .onErrorResume(throwable -> borrowCompensatoryHandler(borrowedBook));
     }
 
     private Mono<@NotNull String> borrowCompensatoryHandler(final BorrowedBookDto borrowedBookDto) {
         return dbService
-            .removeBookFromBorrowedList(borrowedBookDto.get_id())
-            .map(value -> borrowedBookDto.get_id())
+            .removeBookFromBorrowedList(borrowedBookDto.getId())
+            .map(value -> borrowedBookDto.getId())
             .switchIfEmpty(
                 Mono.defer(() -> Mono.error(
                     new LibraryResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,

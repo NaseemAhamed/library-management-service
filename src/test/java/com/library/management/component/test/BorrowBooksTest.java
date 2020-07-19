@@ -22,7 +22,7 @@ public class BorrowBooksTest {
         //GIVEN
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
-            ._id("testId1")
+            .id("testId1")
             .bookName("bookName1")
             .build();
         given.initialiseLibraryWithBooks();
@@ -48,7 +48,7 @@ public class BorrowBooksTest {
         //GIVEN
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
-            ._id("testId3")
+            .id("testId3")
             .bookName("bookName2")//user1 has borrowed two books in borrowedBooks.json
             .build();
         given.clearDbRecords();

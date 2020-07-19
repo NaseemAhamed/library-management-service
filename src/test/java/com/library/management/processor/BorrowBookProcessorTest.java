@@ -41,20 +41,20 @@ public class BorrowBookProcessorTest {
                 .builder()
                 .bookName("book1")
                 .userId("user1")
-                ._id("id1")
+                .id("id1")
                 .build(),
             BorrowedBookDto
                 .builder()
                 .bookName("book2")
                 .userId("user1")
-                ._id("id2")
+                .id("id2")
                 .build());
 
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
             .bookName("book3")
             .userId("user1")
-            ._id("id3")
+            .id("id3")
             .build();
 
         when(dbService
@@ -80,14 +80,14 @@ public class BorrowBookProcessorTest {
             .builder()
             .bookName("book1")
             .userId("user1")
-            ._id("id1")
+            .id("id1")
             .build());
 
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
             .bookName("book3")
             .userId("user1")
-            ._id("id3")
+            .id("id3")
             .build();
 
         when(dbService
@@ -115,20 +115,20 @@ public class BorrowBookProcessorTest {
             .builder()
             .bookName("book1")
             .userId("user1")
-            ._id("id1")
+            .id("id1")
             .build());
 
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
             .bookName("book3")
             .userId("user1")
-            ._id("id3")
+            .id("id3")
             .build();
 
         LibraryBookDto libraryBookDto = LibraryBookDto
             .builder()
             .bookName("book3")
-            ._id("id3")
+            .id("id3")
             .build();
 
         when(dbService
@@ -156,20 +156,20 @@ public class BorrowBookProcessorTest {
             .builder()
             .bookName("book1")
             .userId("user1")
-            ._id("id1")
+            .id("id1")
             .build());
 
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
             .bookName("book3")
             .userId("user1")
-            ._id("id3")
+            .id("id3")
             .build();
 
         LibraryBookDto libraryBookDto = LibraryBookDto
             .builder()
             .bookName("book3")
-            ._id("id3")
+            .id("id3")
             .build();
 
         when(dbService
@@ -205,20 +205,20 @@ public class BorrowBookProcessorTest {
             .builder()
             .bookName("book1")
             .userId("user1")
-            ._id("id1")
+            .id("id1")
             .build());
 
         BorrowedBookDto bookToBeBorrowed = BorrowedBookDto
             .builder()
             .bookName("book3")
             .userId("user1")
-            ._id("id3")
+            .id("id3")
             .build();
 
         LibraryBookDto libraryBookDto = LibraryBookDto
             .builder()
             .bookName("book3")
-            ._id("id3")
+            .id("id3")
             .build();
 
         when(dbService

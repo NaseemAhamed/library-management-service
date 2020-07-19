@@ -23,7 +23,7 @@ public class BorrowCopyBooksTest {
         //GIVEN
         BorrowedBookDto borrowedBookDto = BorrowedBookDto
             .builder()
-            ._id("testId1")
+            .id("testId1")
             .bookName("bookName1") //We have another bookName1 in libraryBooks_master.json
             .build();
         given.initialiseLibraryWithBooks();
@@ -48,7 +48,7 @@ public class BorrowCopyBooksTest {
         //GIVEN
         BorrowedBookDto borrowedBookDto = BorrowedBookDto
             .builder()
-            ._id("testId3")
+            .id("testId3")
             .bookName("bookName2") //We have only one copy of bookName2 in libraryBooks_master.json
             .build();
         given.initialiseLibraryWithBooks();
@@ -73,7 +73,7 @@ public class BorrowCopyBooksTest {
         //GIVEN
         BorrowedBookDto borrowedBookDto = BorrowedBookDto
             .builder()
-            ._id("testId6")
+            .id("testId6")
             .bookName("bookName4") // bookName4 already exists in borrowedBooks.json
             .build();
         given.clearDbRecords();

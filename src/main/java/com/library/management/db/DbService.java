@@ -24,7 +24,7 @@ public class DbService {
     }
 
     public Mono<LibraryBookDto> findBookInLibrary(String id, String bookName) {
-        return libraryBookRepository.findBy_idAndBookName(id, bookName);
+        return libraryBookRepository.findByIdAndBookName(id, bookName);
     }
 
     public Mono<BorrowedBookDto> saveBorrowedBook(BorrowedBookDto borrowedBookDto) {

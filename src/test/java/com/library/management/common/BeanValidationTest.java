@@ -31,7 +31,7 @@ public class BeanValidationTest {
                 assertEquals("Request is invalid", ex.getReason());
                 assertTrue(ex
                     .getErrors()
-                    .containsAll(Arrays.asList("_id must not be null", "bookName must not be null")));
+                    .containsAll(Arrays.asList("id must not be null", "bookName must not be null")));
             })
             .verify();
     }
@@ -98,7 +98,7 @@ public class BeanValidationTest {
             .create(new BeanValidation()
                 .dtoValidation(Mono.just(BorrowedBookDto
                     .builder()
-                    ._id("testId")
+                    .id("testId")
                     .bookName(RandomStringUtils.randomAlphabetic(250))
                     .authorName(RandomStringUtils.randomAlphabetic(250))
                     .userId(RandomStringUtils.randomAlphabetic(30))
