@@ -229,6 +229,8 @@ The service can be further enhanced with audit trail support with AuditEventRepo
 For production environment, CircuitBreaker can be put in place at handler level and environment-specific configuration can be maintained in a centralised repository. As such, the basic 12 factor apps agreements are supposed to be in place.
 The implemented pattern was aimed at reaping the benefits of ACID and had heavily utilised Project Reactor for better resource utilisation. Any other reactive NoSQL databases like Couchbase can also be easily plugged in this architecture if MongoDB requires replacement.
 
+Please contact me with pingnaseem@gmail.com if you face any issues executing the code.
+
 
 
     
