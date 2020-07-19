@@ -2,7 +2,7 @@
 
 -Private repository-
 
-**Table of Contents**
+## Table of Contents
 - Introduction
 - Architecture
     - Technology stack
@@ -13,51 +13,51 @@
     - Project Structure
 - Conclusion
 
-**Introduction**
+## Introduction
 
 The objective of this project is to build a production-ready library management service. 
 The user can view, borrow and return books. 
 
-**Technology Stack**
+## Technology Stack
 
-- Spring WebFlux:
+- **Spring WebFlux**
     - Fully asynchronous and non-blocking stack end-to-end including database interaction with reactive MongoDB.
     - Handles concurrency with less resources and scales well.
     - Prominent performance improvements. Service-to-service communication by WebClient is statistically faster than the conventional ones. The difference becomes more noticeable on high concurrent uses.
     - Functional programming -> More declarative code, especially with the usage of Java 8+ APIs.
     - Support for testing with StepVerifier and WebTestClient.
 
-- Reactive MongoDB:
+- **Reactive MongoDB**
     - Favours non-blocking db communication well.
     - Auto-sharding.
     - It provides MongoDB Compass, a matured and intuitive GUI for backend data visualisation and manipulation.
     - Performance is relatively higher.
     - Easy to scale.
 
-- JUnit, Mockito and reactor-test:
+- **JUnit, Mockito and reactor-test**
     - Unit tests in this application use Jupiter JUnit APIs and Mockito features.
     - Component tests use WebTestClient to test the service routers.
     - StepVerifier is used for testing methods wherever a publisher is returned.
 
-**Business logic and assumptions**
+## Business logic and assumptions
 
-***Sequence Diagram with project structure***
+### Sequence Diagram with project structure
 [SequenceDiagram.png] (https://github.com/NaseemAhamed/library-management-service/blob/master/SequenceDiagram.png)
 
 - The above diagram available at the *root directory* elucidates the business logic and the implemented code flow. 
 
-***Validation requirements***
+### Validation requirements
 - Each user has a borrowing limit of 2 books
 - Only 1 copy of a book can be borrowed by the user
 
-***Assumptions***
+### Assumptions
 - The user who has borrowed the book can only return the book.
 - The available book information from library are _id, bookName and authorName. 
 - Id of database record is taken as ISBN.
 - As the user selects from the already available list of books while borrowing and returning, both _id and bookName together are used for lookup references.
 - If one book is returned and another book is not, the case is treated as valid and handled appropriately.
 
-***API Documentation***
+### API Documentation
 
 [PostMan Collection] (https://github.com/NaseemAhamed/library-management-service/blob/master/library-management-service.postman_collection.json) 
 
