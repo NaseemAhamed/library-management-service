@@ -48,7 +48,7 @@ public class DbServiceTest {
             .findByUserId(anyString());
         doReturn(Mono.just(libraryBookDto))
             .when(libraryBookRepository)
-            .findByIdAndBookName(anyString(),anyString());
+            .findByIdAndBookName(anyString(), anyString());
         doReturn(Mono.empty())
             .when(libraryBookRepository)
             .deleteById(anyString());
