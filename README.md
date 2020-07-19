@@ -13,10 +13,14 @@
     - Project Structure
 - Conclusion
 
+------------------------------------------------------------------------
+
 ## Introduction
 
 The objective of this project is to build a production-ready library management service. 
 The user can view, borrow and return books. 
+
+------------------------------------------------------------------------
 
 ## Technology Stack
 
@@ -44,6 +48,8 @@ The user can view, borrow and return books.
     
 - **Java >= 8**
     - Language and platform
+    
+------------------------------------------------------------------------
 
 ## Business logic and assumptions
 
@@ -169,6 +175,8 @@ Content-Type: application/stream+json
 Response:
 Book(s) with the following ID are returned: 5f137aef625ec410888de04e
 
+------------------------------------------------------------------------
+
 ### Execution:
 
 - To boot the application: 
@@ -195,7 +203,8 @@ Each component test resets the required database states before its execution as 
             - User Story 2 :  BorrowBooksTest.java
             - User Story 3 :  BorrowCopyBooksTest.java
             - User Story 4 :  ReturnBooksTest.java
-    <hr>
+            
+------------------------------------------------------------------------
 
 
 
