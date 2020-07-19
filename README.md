@@ -11,6 +11,7 @@
     - Assumptions
     - API Documentation
     - Project Structure
+    - Performance Test Report
 - Conclusion
 
 ------------------------------------------------------------------------
@@ -66,6 +67,7 @@ The user can view, borrow and return books.
 - Id of database record is taken as ISBN.
 - As the user selects from the already available list of books while borrowing and returning, both _id and bookName together are used for lookup references.
 - If one book is returned and another book is not, the case is treated as valid and handled appropriately.
+- Authentication is not required.
 
 ### API Documentation
 
@@ -180,6 +182,13 @@ Book(s) with the following ID are returned: 5f137aef625ec410888de04e
 - To boot the application: 
     i. mvn clean install
     ii. mvn spring-boot:run
+
+- To run all tests:
+    - mvn test
+    
+- To run all component tests:
+    - mvn test -Dgroups=component
+   
     
 ### Note:
 
@@ -190,7 +199,7 @@ In order to populate library with some books for functional testing, execute Vie
 Each component test resets the required database states before its execution as how it should be. 
 
     
-- To execute the application locally (IntelliJ IDEA), 
+- To execute the application locally, 
     - Run Application.java in default profile.
 
 - Test specs:  
@@ -204,6 +213,21 @@ Each component test resets the required database states before its execution as 
             
 ------------------------------------------------------------------------
 
+### Performance Test Report
+
+The following read performance test is done on my system with a short ramp-up period of 20 seconds.
+Throughput obtained was 87.7/sec. 
+
+The report and aggregate graph can be found at the following link
+[performance test report]
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+The service can be further enhanced with audit trail support with AuditEventRepository and trace ID to visualise the history of transactions.
+For production environment, CircuitBreaker can be put in place at handler level and environment-specific configuration can be maintained in a centralised repository. As such, the basic 12 factor apps agreements are supposed to be in place.
+The implemented pattern was aimed at reaping the benefits of ACID and had heavily utilised Project Reactor for better resource utilisation. Any other reactive NoSQL databases like Couchbase can also be easily plugged in this architecture if MongoDB requires replacement.
 
 
 
