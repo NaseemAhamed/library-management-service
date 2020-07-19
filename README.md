@@ -53,7 +53,7 @@ The user can view, borrow and return books.
 ## Business logic and assumptions
 
 ### Sequence Diagram with project structure
-[SequenceDiagram.png] (https://github.com/NaseemAhamed/library-management-service/blob/master/SequenceDiagram.png)
+[SequenceDiagram.png](https://github.com/NaseemAhamed/library-management-service/blob/master/SequenceDiagram.png)
 
 - The above diagram available at the *root directory* elucidates the business logic and the implemented code flow. 
 
@@ -71,9 +71,9 @@ The user can view, borrow and return books.
 
 ### API Documentation
 
-[PostMan Collection] (https://github.com/NaseemAhamed/library-management-service/blob/master/library-management-service.postman_collection.json) 
+[PostMan Collection](https://github.com/NaseemAhamed/library-management-service/blob/master/library-management-service.postman_collection.json) 
 
-(PostMan Collection is available in the root directory)
+PostMan Collection is available in the root directory.
 
 
 **1. User can view books in library**
