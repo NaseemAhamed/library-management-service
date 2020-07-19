@@ -20,8 +20,6 @@
 The objective of this project is to build a production-ready library management service. 
 The user can view, borrow and return books. 
 
-------------------------------------------------------------------------
-
 ## Technology Stack
 
 - **Spring WebFlux**
