@@ -55,7 +55,7 @@ The user can view, borrow and return books.
 ### Sequence Diagram with project structure
 [SequenceDiagram.png](https://github.com/NaseemAhamed/library-management-service/blob/master/SequenceDiagram.png)
 
-- The above diagram available at the *root directory* elucidates the business logic and the implemented code flow. 
+The above diagram available at the *root directory* elucidates the business logic and the implemented code flow. 
 
 ### Validation requirements
 - Each user has a borrowing limit of 2 books
