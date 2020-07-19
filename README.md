@@ -43,10 +43,10 @@ The user can view, borrow and return books.
     - StepVerifier is used for testing methods wherever a publisher is returned.
     
 - **Slf4j**
-    - Audit Trail
+    - Audit Trail.
     
 - **Java >= 8**
-    - Language and platform
+    - Language and platform.
     
 ------------------------------------------------------------------------
 
@@ -58,8 +58,8 @@ The user can view, borrow and return books.
 The above diagram available at the *root directory* elucidates the business logic and the implemented code flow. 
 
 ### Validation requirements
-- Each user has a borrowing limit of 2 books
-- Only 1 copy of a book can be borrowed by the user
+- Each user has a borrowing limit of 2 books.
+- Only 1 copy of a book can be borrowed by the user.
 
 ### Assumptions
 - The user who has borrowed the book can only return the book.
