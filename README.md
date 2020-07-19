@@ -77,16 +77,19 @@ Request:
 ```
 GET /v1/books
 ```
+
 Body:
 
 ``
 Not Applicable
 ``
+
 Header:
 
 ``
 Not Required
 ``
+
 Response:
 
 ```json
@@ -115,12 +118,14 @@ Body:
     "bookName": "Legend of Zelda"
 }
 ```
+
 Header:
 
 ```
 Accept: application/stream+json
 Content-Type: application/stream+json
 ```
+
 Response:
 
 Book with Id 5f137aef625ec410888de04e is borrowed.
