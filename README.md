@@ -1,6 +1,5 @@
 # Library management service 
 
--Private repository-
 
 ## Table of Contents
 - Introduction
